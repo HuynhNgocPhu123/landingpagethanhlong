@@ -1316,7 +1316,56 @@ color: #b22222;
   margin: 0;
   font-size: 1rem;
 }
+/*social media*/
+.social-fixed {
+          position: fixed;
+          right: 20px;
+          bottom: 100px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          z-index: 999;
+        }
 
+        .social-icon {
+          width: 48px;
+          height: 48px;
+          background-color: transparent; /* <-- Nền trong suốt */
+          border-radius: 50%;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          animation: pulse 2s infinite;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .social-icon img {
+          width: 46px;
+          height: 46px;
+          object-fit: contain;
+          transition: transform 0.3s ease;
+        }
+        /* Hover effect */
+        .social-icon:hover {
+          transform: scale(1.2) rotate(8deg);
+          background-color: #f0fff0;
+          box-shadow: 0 12px 30px rgba(46, 139, 87, 0.3);
+        }
+        .social-icon:hover img {
+          transform: scale(1.1);
+        }
+        /* Pulse animation */
+        @keyframes pulse {
+          0% {
+            box-shadow: 0 0 0 0 rgba(46, 139, 87, 0.4);
+          }
+          70% {
+            box-shadow: 0 0 0 12px rgba(46, 139, 87, 0);
+          }
+          100% {
+            box-shadow: 0 0 0 0 rgba(46, 139, 87, 0);
+          }
+        }
 
     </style>
 </head>
@@ -1327,10 +1376,11 @@ color: #b22222;
             <div class="logo">ELOGI</div>
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="#home">Trang chủ</a></li>
+                    <li><a href="index.html">Trang chủ</a></li>
                     <li><a href="#product">Sản phẩm</a></li>
-                    <li><a href="#nutrition">Dinh dưỡng</a></li>
-                    <li><a href="#contact">Liên hệ</a></li>
+                    <li><a href="#order">Đặt hàng</a></li>
+                    <li><a href="#sale">Khuyến mãi</a></li>
+                    <li><a href="#assess">Đánh giá</a></li>
                 </ul>
             </nav>
             <button class="cta-button" onclick="buyNow()">Mua Ngay</button>
@@ -1356,7 +1406,8 @@ color: #b22222;
     <!-- Main Content -->
     <main class="main-content">
         <!-- Product Information Section -->
-        <div class="product-info">
+        <div id="product">
+            <div class="product-info">
             <h2 style="text-align: center;"> Thông Tin Sản Phẩm</h2>
 
             <div class="product-info-content">
@@ -1405,8 +1456,23 @@ color: #b22222;
     </div>
   </div>
 </section>
+        </div>
 <br>
-        <h2 class="section-title">Hướng Dẫn Đặt Hàng</h2>
+<div class="social-fixed">
+  <a href="https://www.facebook.com/" target="_blank" class="social-icon" title="Facebook">
+    <img src="https://www.freeiconspng.com/uploads/vector-logos-high-resolution-logos-logo-designs-facebook-icon-vector-6.png" alt="Facebook">
+  </a>
+  <a href="https://zalo.me/" target="_blank" class="social-icon" title="Zalo">
+    <img src="https://giaiphapzalo.com/wp-content/uploads/2021/10/logo-white-768x729.png" alt="Zalo">
+  </a>
+  <a href="https://www.instagram.com/" target="_blank" class="social-icon" title="Instagram">
+    <img src="https://static.vecteezy.com/system/resources/previews/012/493/083/large_2x/instagram-logo-3d-illustration-free-png.png" alt="Instagram">
+  </a>
+  <a href="https://www.youtube.com/" target="_blank" class="social-icon" title="YouTube">
+    <img src="https://1.bp.blogspot.com/-W3R9CzV2AWk/YCo9Ev2CcVI/AAAAAAAAD88/qymHYkY-wUwHrClgIXxaZVL_echTZbD0ACLcBGAsYHQ/w1200-h630-p-k-no-nu/Logo%2BYoutube.png" alt="YouTube">
+  </a>
+</div>
+        <h2 class="section-title" id="order" >Hướng Dẫn Đặt Hàng</h2>
         <div class="order-timeline" >
         <div class="timeline-step left">
         <div class="content">
@@ -1504,7 +1570,7 @@ color: #b22222;
 
 
         <!-- Discount Timer -->
-        <div class="discount-section">
+        <div class="discount-section" id="sale">
             <h2 class="discount-title">⚡ FLASH SALE - GIẢM 50%</h2>
             <p>Ưu đãi có thời hạn! Nhanh tay đặt hàng trước khi hết thời gian.</p>
             <div class="timer">
@@ -1552,7 +1618,7 @@ color: #b22222;
             </div>
         </div>
         <!--Đánh giá khách hàng-->
-        <section class="testimonials-section">
+        <section class="testimonials-section" id="assess">
   <h2 class="section-title">Khách Hàng Nói Gì Về Chúng Tôi</h2>
   <div class="testimonials-row">
     
