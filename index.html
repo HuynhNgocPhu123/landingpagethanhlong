@@ -709,6 +709,79 @@
             opacity: 1;
             transform: translateX(0);
         }
+        /* ----- Responsive cho tablet và điện thoại ----- */
+@media screen and (max-width: 1024px) {
+  .product-info-content {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .product-image,
+  .product-details {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .product-details {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .product-details h3 {
+    font-size: 22px;
+  }
+
+  .product-details p,
+  .product-details ul {
+    font-size: 15px;
+  }
+
+  .product-info h2 {
+    font-size: 26px;
+  }
+
+  .product-image img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ----- Responsive cho điện thoại nhỏ hơn 480px (iPhone SE) ----- */
+@media screen and (max-width: 480px) {
+  .product-info {
+    padding: 16px 10px;
+  }
+
+  .product-info h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .product-details h3 {
+    font-size: 20px;
+  }
+
+  .product-details p,
+  .product-details ul {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .product-details ul li {
+    padding-left: 20px;
+  }
+
+  .product-details ul li::before {
+    content: "✔";
+    font-size: 12px;
+  }
+
+  .product-image img {
+    border-radius: 8px;
+  }
+}
+
         /* dinh dưỡng */
         .nutrition-section {
     background-color: #fff0f5;
@@ -1124,22 +1197,7 @@
         font-size: 15px;
         }
 
-        /* Tooltip ẩn mặc định */
-        .privacy-tooltip {
-        display: none;
-        position: absolute;
-        top: -55px;
-        left: 60px;
-        background: #cfc429;
-        color: #444;
-        padding: 8px 14px;
-        border-radius: 8px;
-        font-size: 13px;
-        border-left: 4px solid #ffdc8a;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        white-space: nowrap;
-        z-index: 10;
-        }
+       
 
         .privacy-step:hover .privacy-tooltip {
         display: block;
@@ -1172,22 +1230,6 @@
         font-size: 20px;
         }
 
-        /* Ẩn tooltip mặc định */
-        .privacy-tooltip {
-        display: none;
-        position: absolute;
-        background-color: #109758;
-        color: #fffdfd;
-        padding: 10px 14px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        top: -60px; /* chỉnh tùy vị trí */
-        left: 50%;
-        transform: translateX(-50%);
-        white-space: nowrap;
-        z-index: 1000;
-        }
-
         /* Hiện tooltip khi hover vào privacy-step */
         .privacy-step:hover .privacy-tooltip {
         display: block;
@@ -1217,6 +1259,76 @@
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   margin-bottom: 60px;
+}
+.privacy-icon {
+  font-size: 2rem;
+
+  margin-bottom: 10px;
+}
+
+/* Lùi vào giữa cho bước 2, 3, 4 */
+.privacy-inner {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+@media (max-width: 768px) {
+  .privacy-step {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .privacy-inner {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .privacy-title {
+    font-size: 22px;
+  }
+
+  .privacy-content h4 {
+    font-size: 16px;
+  }
+
+  .privacy-content p {
+    font-size: 14px;
+  }
+
+  .privacy-circle {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .privacy-section {
+    padding: 30px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-title {
+    font-size: 20px;
+  }
+
+  .privacy-step {
+    padding: 14px;
+  }
+
+  .privacy-circle {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .privacy-content h4 {
+    font-size: 15px;
+  }
+
+  .privacy-content p {
+    font-size: 13px;
+  }
 }
 
 /* Tiêu đề nổi bật */
@@ -1451,8 +1563,8 @@ color: #b22222;
     </div>
     
     <div class="nutri-item" data-aos="zoom-in" data-aos-duration="1000">
-      <i class="fas fa-drumstick-bite fa-2x" style="color: #e74c3c;"></i>
-      <p>Sắt</p>
+      <i class="	fas fa-egg fa-2x" style="color: #e7e73c;"></i>
+      <p>Protein</p>
     </div>
   </div>
 </section>
@@ -1516,59 +1628,51 @@ color: #b22222;
         </div>
         <!--Chính sách bảo mật-->
        <section class="privacy-section">
-            <h2 class="privacy-title">Chính Sách Bảo Mật</h2>
-            <div class="privacy-steps">
-                
-                <div class="privacy-step reveal-on-scroll">
-                <div class="privacy-circle">1</div>
-                <div class="privacy-content">
-                    <h4>Bước 1</h4>
-                    <p>Bảo mật thông tin cá nhân</p>
-                    <div class="privacy-tooltip">Chúng tôi cam kết giữ kín thông tin như tên, số điện thoại, địa chỉ.</div>
-                </div>
-                </div>
+  <h2 class="privacy-title">Chính Sách Bảo Mật</h2>
+  <div class="privacy-steps">
 
-                <div class="privacy-step privacy-inner reveal-on-scroll">
-                <div class="privacy-circle">2</div>
-                <div class="privacy-content">
-                    <h4>Bước 2</h4>
-                    <p>Bảo vệ dữ liệu thanh toán</p>
-                    <div class="privacy-tooltip">Thông tin thẻ và giao dịch được mã hóa SSL, không lưu trực tiếp.</div>
-                </div>
-                </div>
+    <div class="privacy-step reveal-on-scroll">
+      <div class="privacy-icon"><i class="fas fa-user-shield"></i></div>
+      <div class="privacy-content">
+        <h4>Bảo mật thông tin cá nhân</h4>
+        <p>Chúng tôi cam kết giữ kín thông tin như tên, số điện thoại, địa chỉ.</p>
+      </div>
+    </div>
 
-                <div class="privacy-step privacy-inner reveal-on-scroll">
-                <div class="privacy-circle">3</div>
-                <div class="privacy-content">
-                    <h4>Bước 3</h4>
-                    <p>Bảo vệ truy cập hệ thống</p>
-                    <div class="privacy-tooltip">Phân quyền người dùng và xác thực để ngăn truy cập trái phép.</div>
-                </div>
-                </div>
+    <div class="privacy-step privacy-inner reveal-on-scroll">
+      <div class="privacy-icon"><i class="fas fa-credit-card"></i></div>
+      <div class="privacy-content">
+        <h4>Bảo vệ dữ liệu thanh toán</h4>
+        <p>Thông tin thẻ và giao dịch được mã hóa SSL, không lưu trực tiếp.</p>
+      </div>
+    </div>
 
-                <div class="privacy-step privacy-inner reveal-on-scroll">
-                <div class="privacy-circle">4</div>
-                <div class="privacy-content">
-                    <h4>Bước 4</h4>
-                    <p>Giám sát và phát hiện xâm nhập</p>
-                    <div class="privacy-tooltip">Hệ thống luôn giám sát để phát hiện và xử lý hành vi bất thường.</div>
-                </div>
-                </div>
+    <div class="privacy-step privacy-inner reveal-on-scroll">
+      <div class="privacy-icon"><i class="fas fa-user-lock"></i></div>
+      <div class="privacy-content">
+        <h4>Phân quyền và kiểm soát truy cập</h4>
+        <p>Chỉ người được phép mới có quyền truy cập hệ thống.</p>
+      </div>
+    </div>
 
-                <div class="privacy-step reveal-on-scroll">
-                <div class="privacy-circle">5</div>
-                <div class="privacy-content">
-                    <h4>Bước 5</h4>
-                    <p>Cam kết minh bạch & tuân thủ</p>
-                    <div class="privacy-tooltip">Tuân thủ pháp luật và công khai chính sách rõ ràng đến người dùng.</div>
-                </div>
-                </div>
+    <div class="privacy-step privacy-inner reveal-on-scroll">
+      <div class="privacy-icon"><i class="fas fa-eye"></i></div>
+      <div class="privacy-content">
+        <h4>Giám sát và phát hiện xâm nhập</h4>
+        <p>Hệ thống luôn giám sát để phát hiện và xử lý hành vi bất thường.</p>
+      </div>
+    </div>
 
-            </div>
-        </section>
+    <div class="privacy-step reveal-on-scroll">
+      <div class="privacy-icon"><i class="fas fa-scale-balanced"></i></div>
+      <div class="privacy-content">
+        <h4>Tuân thủ và minh bạch</h4>
+        <p>Tuân thủ pháp luật và công khai chính sách rõ ràng đến người dùng.</p>
+      </div>
+    </div>
 
-
-
+  </div>
+</section>
         <!-- Discount Timer -->
         <div class="discount-section" id="sale">
             <h2 class="discount-title">⚡ FLASH SALE - GIẢM 50%</h2>
@@ -1629,7 +1733,7 @@ color: #b22222;
         <i class="fas fa-star"></i><i class="fas fa-star"></i>
       </div>
       <p>“Sản phẩm đóng gói cẩn thận, giao siêu nhanh và chất lượng đúng như mô tả. Mình rất hài lòng và sẽ tiếp tục ủng hộ shop 🥰”</p>
-      <h4>Nguyễn Minh Thư</h4>
+      <h4>Trần Gia Bảo</h4>
     </div>
 
     <div class="testimonial-card">
