@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Dragon Fruit Premium - Thanh Long Sấy Cao Cấp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: rgba(253, 248, 248, 0.95);
+        }
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(236, 206, 206, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        /* Glow animation */
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #ff6b6b, 0 0 10px #4ecdc4;
+            }
+            to {
+                text-shadow: 0 0 15px #ff6b6b, 0 0 30px #4ecdc4;
+            }
+        }
+
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 5px rgba(255, 107, 107, 0.5)); }
+            to { filter: drop-shadow(0 0 15px rgba(78, 205, 196, 0.8)); }
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: #ff6b6b;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 107, 107, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hero Section with full height */
+.hero {
+    position: relative;
+    min-height: 70vh;
+    background: linear-gradient(to right, #fff0f0, #ffeedd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+/* Nội dung nằm chính giữa */
+.hero-content {
+    max-width: 700px;
+    animation: fadeInUp 1.5s ease-out;
+    z-index: 2;
+}
+
+/* Trái thanh long bên trái rơi từ trên xuống */
+.fruit-left {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 150px;
+    z-index: 1;
+    animation: fallDown 6s linear infinite;
+}
+
+.fruit-right {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 150px;
+    z-index: 1;
+    animation: fallDown 5.2s linear infinite;
+}
+
+@keyframes fallDown {
+    0% {
+        opacity: 1;
+        transform: translateY(-80px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(800px); /* rơi khỏi màn hình */
+    }
+}
+
+
+
+
+/* Tiêu đề và mô tả */
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #d62828;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* Nút CTA */
+.cta-button {
+    background: #ffd60a;
+    color: #000;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+    background: #ffe14d;
+}
+
+/* Animation effects */
+@keyframes fadeInUp {
+    0% { transform: translateY(40px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 214, 10, 0.6); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255, 214, 10, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 214, 10, 0); }
+}
+
+        /* Main Content */
+        .main-content {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Special Cards Layout */
+        .card:nth-child(1) { transform: rotate(-2deg); }
+        .card:nth-child(2) { transform: rotate(1deg); }
+        .card:nth-child(3) { transform: rotate(-1deg); }
+        .card:nth-child(4) { transform: rotate(2deg); }
+        .card:nth-child(5) { transform: rotate(-1.5deg); }
+        .card:nth-child(6) { transform: rotate(1.5deg); }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02) rotate(0deg) !important;
+        }
+
+        /* Discount Timer */
+        .discount-section {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 4rem 0;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .discount-section::before {
+            content: '💥';
+            position: absolute;
+            font-size: 5rem;
+            top: -20px;
+            right: -20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-30px); }
+            60% { transform: translateY(-15px); }
+        }
+
+        .discount-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px #fff, 0 0 20px #ffeaa7;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #ffeaa7;
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #ffeaa7;
+            }
+        }
+
+        .discount-section p {
+            font-size: 1.2rem;
+            animation: fadeIn 1.5s ease-out;
+            opacity: 0.95;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .timer-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 10px;
+            min-width: 80px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: popIn 0.5s ease forwards;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .timer-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .timer-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* CTA Button Effects */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 214, 10, 0.6);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(255, 214, 10, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 214, 10, 0);
+            }
+        }
+
+        .cta-button {
+            background: #ffd60a;
+            color: #000;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.1);
+            background: #ffe14d;
+        }
+        /* Achievement Section */
+        .achievement {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 4rem 0;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .achievement-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            display: block;
+            animation: countUp 2s ease-out;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .stat-number {
+        font-size: 3rem;
+        font-weight: bold;
+        display: block;
+        animation: countFade 1s ease-in;
+        transition: transform 0.3s;
+        }
+
+        .stat-item:hover .stat-number {
+        transform: scale(1.05);
+        }
+
+        @keyframes countFade {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #4ecdc4;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p, .footer-section li {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timer {
+                gap: 1rem;
+            }
+            
+            .discount-title {
+                font-size: 2rem;
+            }
+        }
+        /* nỘi dung chính */
+       /* Vùng sản phẩm */
+        .product-info {
+            margin: 60px 0;
+            padding: 20px;
+            background: #fffdf7;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
+        }
+
+        /* Tiêu đề chính */
+        .product-info h2 {
+            font-size: 30px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            color: #b22222;
+            text-transform: uppercase;
+            animation: textPulse 2s infinite;
+            text-align: center;
+        }
+
+        /* Bố cục 2 cột */
+        .product-info-content {
+            display: flex;
+            gap: 50px; /* Tăng khoảng cách giữa hình và chữ */
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        /* Hình ảnh */
+        .product-image {
+            flex: 1;
+            min-width: 280px;
+            transition: transform 0.5s ease;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        /* Khi xuất hiện */
+        .product-image.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 1s ease;
+        }
+
+        .product-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s ease;
+        }
+
+        .product-image img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Nội dung */
+        .product-details {
+            flex: 2;
+            min-width: 280px;
+            padding-left: 10px; /* Cách hình ra thêm */
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .product-details.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 1s ease;
+        }
+
+        .product-details h3 {
+            font-size: 24px;
+            margin-top: 0;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .product-details h3:hover {
+            color: #ff6600;
+        }
+
+        .product-details p,
+        .product-details ul {
+            font-size: 16px;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        .product-details ul {
+            padding-left: 20px;
+            list-style-type: none;
+        }
+
+        .product-details ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .product-details ul li:hover {
+            transform: translateX(5px);
+            color: #007bff;
+        }
+
+        .product-details ul li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+        }
+
+        /* Tiêu đề nhấp nháy */
+        @keyframes textPulse {
+            0%, 100% {
+                transform: scale(1);
+                color: #b22222;
+            }
+            50% {
+                transform: scale(1.03);
+                color: #ff6347;
+            }
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .product-info-content {
+                flex-direction: column;
+            }
+            .product-details h3 {
+                text-align: center;
+            }
+        }
+        /* Ẩn ban đầu */
+        .product-image {
+            opacity: 0;
+            transform: translateX(-60px) scale(0.95);
+            transition: all 1s ease;
+        }
+
+        /* Khi xuất hiện */
+        .product-image.visible {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+            animation: floatUpDown 3s ease-in-out infinite;
+        }
+
+        /* Hiệu ứng lặp vô hạn: trôi nhẹ lên xuống */
+        @keyframes floatUpDown {
+            0%   { transform: translateY(0) scale(1); }
+            50%  { transform: translateY(-8px) scale(1.02); }
+            100% { transform: translateY(0) scale(1); }
+        }
+
+        /* Nội dung trượt từ phải */
+        .product-details {
+            transform: translateX(50px);
+        }
+        .product-details.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        /* dinh dưỡng */
+        .nutrition-section {
+    background-color: #fff0f5;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    animation: zoomPulse 2.5s infinite;
+}
+
+@keyframes zoomPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.nutrition-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nutri-item {
+    background: #fff;
+    padding: 20px;
+    width: 160px;
+    border-radius: 15px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.nutri-item p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Clicked effect */
+.nutri-item.clicked {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.2);
+}
+
+.nutri-item.clicked::after {
+    content: '✓';
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-size: 18px;
+    color: #4CAF50;
+}
+
+        .nutrition-info {
+            margin: 60px auto;
+            padding: 30px 20px;
+            background: #fdfdfd;
+            border-radius: 16px;
+            max-width: 1000px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+
+        .nutrition-info.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 40px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Modern grid */
+        .nutrition-modern-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+        }
+
+        /* Each item */
+        .nutri-item {
+            background: white;
+            border-radius: 16px;
+            padding: 20px 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+        }
+
+        .nutri-item img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .nutri-label {
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .nutri-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: #e53935;
+        }
+
+        /* Hover */
+        .nutri-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+        .nutrition-modern-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Card gọn đẹp */
+        .nutri-item {
+            background: white;
+            border-radius: 16px;
+            padding: 20px 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .nutri-item img {
+            width: 36px;
+            height: 36px;
+            margin-bottom: 8px;
+        }
+
+        .nutri-label {
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 4px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .nutri-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: #e53935;
+        }
+
+        /* Hover effect */
+        .nutri-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+        /*Hướng dẫn đặt hàng*/
+        .order-timeline {
+            position: relative;
+            padding: 40px 10px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .order-timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: calc(100% - 40px);
+            background: #e0e0e0;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 60px;
+            color: #b22222;
+            text-transform: uppercase;
+        }
+
+        .timeline-step {
+            position: relative;
+            width: 50%;
+            padding: 20px 30px;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .timeline-step.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-step.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-step.right {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-step .content {
+            background: #fff;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            display: inline-block;
+            position: relative;
+        }
+
+        /* Circle số */
+        .timeline-step .circle {
+            position: absolute;
+            top: 25px;
+            width: 32px;
+            height: 32px;
+            background: #ff6347;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            z-index: 2;
+            box-shadow: 0 0 0 4px #fff;
+        }
+
+        .timeline-step.left .circle {
+            right: -16px;
+        }
+
+        .timeline-step.right .circle {
+            left: -16px;
+        }
+
+        /* Tooltip chi tiết */
+        /* Tooltip chi tiết – ĐẸP HƠN */
+        .timeline-step .tooltip-note {
+            position: absolute;
+            top: -70px;
+            max-width: 240px;
+            background: #fffbf0;
+            color: #333;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 14px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            pointer-events: none;
+            transform: translateY(-10px);
+            z-index: 10;
+            font-weight: 500;
+            border: 1px solid #f0c36d;
+        }
+
+        /* Vị trí trái/phải */
+        .timeline-step.left .tooltip-note {
+            right: 0;
+        }
+
+        .timeline-step.right .tooltip-note {
+            left: 0;
+        }
+
+        /* Mũi tên chỉ xuống */
+        .timeline-step .tooltip-note::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 20px;
+            border-width: 10px 10px 0 10px;
+            border-style: solid;
+            border-color: #fffbf0 transparent transparent transparent;
+        }
+
+        /* Hiển thị khi hover */
+        .timeline-step:hover .tooltip-note {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* Text */
+        .timeline-step h4 {
+            font-size: 17px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            color: #333;
+        }
+
+        .timeline-step p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .timeline-step,
+            .timeline-step.left,
+            .timeline-step.right {
+                width: 100%;
+                left: 0;
+                text-align: left;
+                padding-left: 50px;
+            }
+
+            .timeline-step .circle {
+                left: 10px !important;
+                right: auto !important;
+            }
+
+            .order-timeline::before {
+                left: 26px;
+            }
+
+            .timeline-step .tooltip-note {
+                left: 50px;
+                right: auto;
+            }
+        }
+        /* Bảo mật */
+        .privacy-section {
+        padding: 40px 20px;
+        background-color: #ffffff;
+        }
+
+        .privacy-title {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 40px;
+        }
+
+        .privacy-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+        padding: 20px 24px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #f9f9f9, #fbf5f5);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        }
+        .privacy-step {
+        margin-bottom: 35px;
+        }
+
+        .privacy-step:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .privacy-step.privacy-inner {
+        margin-left: 40px;
+        background: linear-gradient(135deg, #f1f6ff, #fff1f1);
+        }
+
+        /* Số bước */
+        .privacy-circle {
+        background-color: #f8d7f3;
+        color: white;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        flex-shrink: 0;
+        box-shadow: 0 2px 6px rgba(0, 123, 255, 0.3);
+        }
+
+        /* Tiêu đề và nội dung */
+        .privacy-content h4 {
+        margin: 0 0 4px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #111;
+        }
+
+        .privacy-content p {
+        margin: 0;
+        color: #333;
+        font-size: 15px;
+        }
+
+        /* Tooltip ẩn mặc định */
+        .privacy-tooltip {
+        display: none;
+        position: absolute;
+        top: -55px;
+        left: 60px;
+        background: #cfc429;
+        color: #444;
+        padding: 8px 14px;
+        border-radius: 8px;
+        font-size: 13px;
+        border-left: 4px solid #ffdc8a;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        white-space: nowrap;
+        z-index: 10;
+        }
+
+        .privacy-step:hover .privacy-tooltip {
+        display: block;
+        }
+
+
+        .privacy-inner {
+        margin-left: 40px;
+        }
+
+        .privacy-circle {
+        background-color: #1e88e5;
+        color: white;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        }
+
+        .privacy-content {
+        flex: 1;
+        }
+
+        .privacy-content h4 {
+        margin: 0;
+        font-size: 20px;
+        }
+
+        /* Ẩn tooltip mặc định */
+        .privacy-tooltip {
+        display: none;
+        position: absolute;
+        background-color: #109758;
+        color: #fffdfd;
+        padding: 10px 14px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        top: -60px; /* chỉnh tùy vị trí */
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        z-index: 1000;
+        }
+
+        /* Hiện tooltip khi hover vào privacy-step */
+        .privacy-step:hover .privacy-tooltip {
+        display: block;
+        }
+
+        /* Đảm bảo parent có relative để định vị tooltip */
+        .privacy-step {
+        position: relative;
+        }
+
+        /* Mặc định ẩn đi và trượt nhẹ xuống */
+        .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.6s ease;
+        }
+
+        /* Khi xuất hiện trong viewport */
+        .reveal-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+        }
+        /* Nền nhẹ cho cả section */
+.privacy-section {
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #e8f0ff, #f4f9ff);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  margin-bottom: 60px;
+}
+
+/* Tiêu đề nổi bật */
+.privacy-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+color: #b22222;
+  margin-bottom: 40px;
+  animation: zoomInOut 2s ease-in-out infinite alternate;
+}
+
+/* Hiệu ứng zoom-in-out */
+@keyframes zoomInOut {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+/* Scroll hiệu ứng (giữ nguyên từ bạn) */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+        /* Đánh giá khách hàng */
+    .testimonials-section {
+  background: #fff0f5;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #c2185b;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.testimonials-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: linear-gradient(135deg, #fff5f8, #ffe4ec);
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  max-width: 320px;
+  flex: 1 1 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card .avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #ffb6c1;
+}
+
+.testimonial-card .stars {
+  color: #ffc107;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.testimonial-card p {
+  font-style: italic;
+  color: #5d4037;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.testimonial-card h4 {
+  color: #c2185b;
+  font-weight: bold;
+  margin: 0;
+  font-size: 1rem;
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">ELOGI</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Trang chủ</a></li>
+                    <li><a href="#product">Sản phẩm</a></li>
+                    <li><a href="#nutrition">Dinh dưỡng</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+            <button class="cta-button" onclick="buyNow()">Mua Ngay</button>
+        </div>
+    </header>
+
+    <section class="hero">
+    <!-- Trái thanh long bên trái -->
+    <img src="image/bgnonen.png" alt="Trái thanh long" class="fruit-left">
+
+    <!-- Trái thanh long bên phải -->
+    <img src="image/thanhlong2nobg.png" alt="Trái thanh long" class="fruit-right">
+
+    <div class="hero-content">
+        <h1>Thanh Long Sấy Premium</h1>
+        <p>Hương vị tự nhiên, dinh dưỡng tuyệt vời - Trải nghiệm sự khác biệt</p>
+        <button class="cta-button" onclick="buyNow()">Khám Phá Ngay</button>
+    </div>
+</section>
+
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Product Information Section -->
+        <div class="product-info">
+            <h2 style="text-align: center;"> Thông Tin Sản Phẩm</h2>
+
+            <div class="product-info-content">
+                <!-- Hình ảnh -->
+                <div class="product-image">
+                    <img src="image/thanhlong1.jpg" alt="Thanh Long Sấy">
+                </div>
+
+                <!-- Nội dung -->
+                <div class="product-details">
+                    <h3>Thanh Long Sấy Tự Nhiên</h3>
+                    <p><strong>Thanh long sấy</strong> là món ăn vặt tự nhiên, giàu dinh dưỡng, giữ trọn vị ngọt thanh và màu sắc tươi tắn của trái thanh long tươi.</p>
+                    <ul>
+                        <li>🌱 100% thanh long tươi, không chất bảo quản</li>
+                        <li>🔥 Sấy lạnh giữ nguyên hương vị và dưỡng chất</li>
+                        <li>💪 Giàu chất xơ, vitamin C, chống oxy hóa</li>
+                        <li>📦 Đóng gói tiện lợi, dễ bảo quản và mang theo</li>
+                    </ul>
+                    <p>Thích hợp dùng làm món ăn nhẹ lành mạnh mỗi ngày, hoặc làm quà tặng sức khỏe cho người thân yêu.</p>
+                </div>
+            </div>
+        </div>
+        <section class="nutrition-section">
+  <h2 class="section-title">Thành Phần Dinh Dưỡng</h2>
+  <div class="nutrition-grid">
+    <div class="nutri-item" data-aos="zoom-in" data-aos-duration="1000">
+      <i class="fas fa-bolt fa-2x" style="color: #f39c12;"></i>
+      <p>Năng lượng</p>
+    </div>
+    <div class="nutri-item" data-aos="zoom-in" data-aos-duration="1000">
+      <i class="fas fa-bread-slice fa-2x" style="color: #d35400;"></i>
+      <p>Carbohydrate</p>
+    </div>
+    <div class="nutri-item" data-aos="zoom-in" data-aos-duration="1000">
+      <i class="fas fa-leaf fa-2x" style="color: #27ae60;"></i>
+      <p>Chất xơ</p>
+    </div>
+    <div class="nutri-item" data-aos="zoom-in" data-aos-duration="1000">
+      <i class="fas fa-capsules fa-2x" style="color: #9b59b6;"></i>
+      <p>Vitamin C</p>
+    </div>
+    
+    <div class="nutri-item" data-aos="zoom-in" data-aos-duration="1000">
+      <i class="fas fa-drumstick-bite fa-2x" style="color: #e74c3c;"></i>
+      <p>Sắt</p>
+    </div>
+  </div>
+</section>
+<br>
+        <h2 class="section-title">Hướng Dẫn Đặt Hàng</h2>
+        <div class="order-timeline" >
+        <div class="timeline-step left">
+        <div class="content">
+            <h4>Bước 1</h4>
+            <p>Chọn số lượng sản phẩm mong muốn</p>
+            <div class="tooltip-note">Bạn có thể chọn 1 hoặc nhiều sản phẩm tùy nhu cầu</div>
+        </div>
+        <div class="circle">1</div>
+        </div>
+
+
+        <div class="timeline-step right" data-note="Dùng 'Mua Ngay' để thanh toán nhanh, hoặc thêm vào giỏ để tiếp tục mua.">
+            <div class="note-tooltip"></div>
+            <div class="content">
+            <h4>Bước 2</h4>
+            <p>Nhấn nút <strong>'Mua Ngay'</strong> hoặc <strong>'Thêm vào giỏ'</strong></p>
+            <div class="tooltip-note">Dùng 'Mua Ngay' để thanh toán nhanh, hoặc thêm vào giỏ để tiếp tục mua.</div>
+            </div>
+            <div class="circle">2</div>
+        </div>
+
+        <div class="timeline-step left" data-note="Hãy điền đúng tên, địa chỉ và số điện thoại để nhận hàng chính xác.">
+            <div class="note-tooltip"></div>
+            <div class="content">
+            <h4>Bước 3</h4>
+            <p>Điền thông tin giao hàng: tên, địa chỉ, số điện thoại</p>
+            <div class="tooltip-note">Hãy điền đúng tên, địa chỉ và số điện thoại để nhận hàng chính xác.</div>
+            </div>
+            <div class="circle">3</div>
+        </div>
+
+        <div class="timeline-step right" data-note="Kiểm tra lại đơn, nhấn xác nhận. Giao hàng từ 1–3 ngày.">
+            <div class="note-tooltip"></div>
+            <div class="content">
+            <h4>Bước 4</h4>
+            <p>Xác nhận đơn và chờ giao hàng tận nơi 🚚</p>
+            <div class="tooltip-note">Kiểm tra lại đơn, nhấn xác nhận. Giao hàng từ 1–3 ngày.</div>
+            </div>
+            <div class="circle">4</div>
+        </div>
+        </div>
+        <!--Chính sách bảo mật-->
+       <section class="privacy-section">
+            <h2 class="privacy-title">Chính Sách Bảo Mật</h2>
+            <div class="privacy-steps">
+                
+                <div class="privacy-step reveal-on-scroll">
+                <div class="privacy-circle">1</div>
+                <div class="privacy-content">
+                    <h4>Bước 1</h4>
+                    <p>Bảo mật thông tin cá nhân</p>
+                    <div class="privacy-tooltip">Chúng tôi cam kết giữ kín thông tin như tên, số điện thoại, địa chỉ.</div>
+                </div>
+                </div>
+
+                <div class="privacy-step privacy-inner reveal-on-scroll">
+                <div class="privacy-circle">2</div>
+                <div class="privacy-content">
+                    <h4>Bước 2</h4>
+                    <p>Bảo vệ dữ liệu thanh toán</p>
+                    <div class="privacy-tooltip">Thông tin thẻ và giao dịch được mã hóa SSL, không lưu trực tiếp.</div>
+                </div>
+                </div>
+
+                <div class="privacy-step privacy-inner reveal-on-scroll">
+                <div class="privacy-circle">3</div>
+                <div class="privacy-content">
+                    <h4>Bước 3</h4>
+                    <p>Bảo vệ truy cập hệ thống</p>
+                    <div class="privacy-tooltip">Phân quyền người dùng và xác thực để ngăn truy cập trái phép.</div>
+                </div>
+                </div>
+
+                <div class="privacy-step privacy-inner reveal-on-scroll">
+                <div class="privacy-circle">4</div>
+                <div class="privacy-content">
+                    <h4>Bước 4</h4>
+                    <p>Giám sát và phát hiện xâm nhập</p>
+                    <div class="privacy-tooltip">Hệ thống luôn giám sát để phát hiện và xử lý hành vi bất thường.</div>
+                </div>
+                </div>
+
+                <div class="privacy-step reveal-on-scroll">
+                <div class="privacy-circle">5</div>
+                <div class="privacy-content">
+                    <h4>Bước 5</h4>
+                    <p>Cam kết minh bạch & tuân thủ</p>
+                    <div class="privacy-tooltip">Tuân thủ pháp luật và công khai chính sách rõ ràng đến người dùng.</div>
+                </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- Discount Timer -->
+        <div class="discount-section">
+            <h2 class="discount-title">⚡ FLASH SALE - GIẢM 50%</h2>
+            <p>Ưu đãi có thời hạn! Nhanh tay đặt hàng trước khi hết thời gian.</p>
+            <div class="timer">
+                <div class="timer-item">
+                    <span class="timer-number" id="days">12</span>
+                    <span class="timer-label">Ngày</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-number" id="hours">08</span>
+                    <span class="timer-label">Giờ</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-number" id="minutes">45</span>
+                    <span class="timer-label">Phút</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-number" id="seconds">30</span>
+                    <span class="timer-label">Giây</span>
+                </div>
+            </div>
+            <button class="cta-button" onclick="buyNow()">Mua Ngay - Tiết Kiệm 500.000đ</button>
+        </div>
+       
+        <!-- Achievement Section -->
+        <div class="achievement">
+            <h1> Thành Tựu Của Chúng Tôi</h1>
+            <p>Được tin tưởng bởi hàng nghìn khách hàng trên toàn quốc</p>
+            <div class="achievement-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="15000" data-suffix="+">0</span>
+                    <div class="stat-label">Khách Hàng Hài Lòng</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="50000" data-suffix="+">0</span>
+                    <div class="stat-label">Sản Phẩm Bán Ra</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="99.8" data-decimal="true" data-suffix="%">0</span>
+                    <div class="stat-label">Tỷ Lệ Hài Lòng</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5" data-suffix="⭐">0</span>
+                    <div class="stat-label">Đánh Giá Trung Bình</div>
+                </div>
+            </div>
+        </div>
+        <!--Đánh giá khách hàng-->
+        <section class="testimonials-section">
+  <h2 class="section-title">Khách Hàng Nói Gì Về Chúng Tôi</h2>
+  <div class="testimonials-row">
+    
+    <div class="testimonial-card">
+      <img src="https://i.pravatar.cc/80?img=12" alt="Nguyễn Minh Thư" class="avatar">
+      <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+      </div>
+      <p>“Sản phẩm đóng gói cẩn thận, giao siêu nhanh và chất lượng đúng như mô tả. Mình rất hài lòng và sẽ tiếp tục ủng hộ shop 🥰”</p>
+      <h4>Nguyễn Minh Thư</h4>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="https://i.pravatar.cc/80?img=32" alt="Trần Quốc Đạt" class="avatar">
+      <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+      </div>
+      <p>“Mùi vị tự nhiên, không quá ngọt, ăn rất vừa miệng. Mẹ mình cũng thích nên chắc chắn sẽ mua thêm lần nữa 💖”</p>
+      <br>
+      <h4>Trần Quốc Đạt</h4>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="https://i.pravatar.cc/80?img=45" alt="Lê Hồng Anh" class="avatar">
+      <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+      </div>
+      <p>“Trang web dễ sử dụng, đặt hàng nhanh chóng, hỗ trợ khách hàng nhiệt tình. Quá tuyệt vời cho một trải nghiệm mua sắm online!”</p>
+      <h4>Lê Hồng Anh</h4>
+    </div>
+
+  </div>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Công Ty TNHH EMC</h4>
+                <p>Chuyên cung cấp trái cây sấy khô cao cấp, cam kết chất lượng và an toàn thực phẩm.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Thông Tin Liên Hệ</h4>
+                <ul>
+                    <li>📍 Tòa nhà EMC, Số 12 Duy Tân, Cầu Giấy, Hà Nội</li>
+                    <li>📞 Hotline: 19006789</li>
+                    <li>✉️ Email: info@emcgroup.com.vn</li>
+                    <li>🌐 Website: https://elogi.vn/</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Giờ Làm Việc</h4>
+                <ul>
+                    <li>🕐 Thứ 2 - Thứ 6: 8:00 - 18:00</li>
+                    <li>🕐 Thứ 7: 8:00 - 12:00</li>
+                    <li>🕐 Chủ nhật: Nghỉ</li>
+                    <li>📞 Hỗ trợ khách hàng: 24/7</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Theo Dõi Chúng Tôi</h4>
+                <ul>
+                    <li>📘 Facebook: DragonFruit Premium</li>
+                    <li>📷 Instagram: @dragonfruitvn</li>
+                    <li>📺 YouTube: Dragon Fruit Channel</li>
+                    <li>🔔 Zalo: 0901.888.999</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 EMC. Bản quyền thuộc về công ty. | Design by Phu</p>
+        </div>
+    </footer>
+
+    <script>
+        // Timer countdown
+        function updateTimer() {
+            const days = document.getElementById('days');
+            const hours = document.getElementById('hours');
+            const minutes = document.getElementById('minutes');
+            const seconds = document.getElementById('seconds');
+            
+            let d = parseInt(days.textContent);
+            let h = parseInt(hours.textContent);
+            let m = parseInt(minutes.textContent);
+            let s = parseInt(seconds.textContent);
+            
+            s--;
+            if (s < 0) {
+                s = 59;
+                m--;
+                if (m < 0) {
+                    m = 59;
+                    h--;
+                    if (h < 0) {
+                        h = 23;
+                        d--;
+                        if (d < 0) {
+                            d = 0;
+                            h = 0;
+                            m = 0;
+                            s = 0;
+                        }
+                    }
+                }
+            }
+            
+            days.textContent = d.toString().padStart(2, '0');
+            hours.textContent = h.toString().padStart(2, '0');
+            minutes.textContent = m.toString().padStart(2, '0');
+            seconds.textContent = s.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateTimer, 1000);
+        
+        // Buy now function
+        function buyNow() {
+            alert('🎉 Cảm ơn bạn đã quan tâm! Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.');
+        }
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add scroll animation to cards
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        document.querySelectorAll('.card').forEach((card) => {
+            observer.observe(card);
+        });
+    </script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+
+
+});
+
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    // Thêm vào phần tử dinh dưỡng
+    const targets = document.querySelectorAll(".product-image, .product-details, .nutrition-info,.security-policy-section");
+    targets.forEach(el => observer.observe(el));
+});
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.timeline-step').forEach(step => observer.observe(step));
+});
+
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const revealElements = document.querySelectorAll(".reveal-on-scroll");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          // observer.unobserve(entry.target); // Nếu chỉ muốn hiệu ứng 1 lần
+        }
+      });
+    }, {
+      threshold: 0.1 // 10% vào viewport là hiện
+    });
+
+    revealElements.forEach(el => observer.observe(el));
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll('.stat-number');
+    let triggered = false;
+
+    const animateCount = (el) => {
+      const target = parseFloat(el.getAttribute('data-target'));
+      const isDecimal = el.hasAttribute('data-decimal');
+      const suffix = el.getAttribute('data-suffix') || '';
+      let count = 0;
+      const step = target / 100;
+      const interval = setInterval(() => {
+        count += step;
+        if (count >= target) {
+          el.textContent = isDecimal
+            ? target.toFixed(1) + suffix
+            : Math.floor(target).toLocaleString() + suffix;
+          clearInterval(interval);
+        } else {
+          el.textContent = isDecimal
+            ? count.toFixed(1) + suffix
+            : Math.floor(count).toLocaleString() + suffix;
+        }
+      }, 20);
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      if (!triggered && entries.some(e => e.isIntersecting)) {
+        counters.forEach(animateCount);
+        triggered = true;
+      }
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => observer.observe(counter));
+  });
+</script>
+<!-- AOS & Click Logic -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+  document.querySelectorAll('.nutri-item').forEach(item => {
+      item.addEventListener('click', () => {
+          item.classList.toggle('clicked');
+      });
+  });
+</script>
+<script>
+    const reveals = document.querySelectorAll('.reveal-on-scroll');
+
+const observe = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+reveals.forEach(reveal => {
+  observe.observe(reveal);
+});
+
+</script>
+</body>
+</html>
