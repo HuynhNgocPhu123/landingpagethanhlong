@@ -1478,6 +1478,116 @@ color: #b22222;
             box-shadow: 0 0 0 0 rgba(46, 139, 87, 0);
           }
         }
+.footer-section.newsletter form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-section.newsletter input[type="email"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.footer-section.newsletter button {
+    padding: 10px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.footer-section.newsletter button:hover {
+    background: linear-gradient(45deg, #4ecdc4, #ff6b6b);
+}
+.success-popup {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.success-popup.hidden {
+    display: none;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    animation: popIn 0.4s ease-out;
+    position: relative;
+}
+
+.popup-content h3 {
+    color: #2ecc71;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.popup-content p {
+    color: #444;
+    font-size: 16px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.ok-btn1 {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.ok-btn1:hover {
+    background-color: #27ae60;
+}
 
     </style>
 </head>
@@ -1789,12 +1899,48 @@ color: #b22222;
                     <li>📞 Hỗ trợ khách hàng: 24/7</li>
                 </ul>
             </div>
+            <div class="footer-section newsletter">
+                <h4>Đăng ký nhận tin</h4>
+                <p>Nhập email để nhận khuyến mãi và cập nhật sản phẩm mới.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Nhập email của bạn" required>
+                    <button type="submit" id="registor">Đăng ký</button>
+                </form>
+                <div id="success-popup" class="success-popup hidden">
+                    <div class="popup-content">
+                        <span class="close-btn" onclick="closePopup()">×</span>
+                        <h3>🎉 Đăng ký thành công!</h3>
+                        <p>Cảm ơn bạn đã đăng ký nhận tin từ chúng tôi.</p>
+                        <button onclick="redirectToIndex()" class="ok-btn1">OK</button>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <div class="footer-bottom">
             <p>&copy; 2025 EMC. Bản quyền thuộc về công ty. | Design by Phu</p>
         </div>
     </footer>
+<script>
+function showPopup() {
+    document.getElementById("success-popup").classList.remove("hidden");
+}
+
+function closePopup() {
+    document.getElementById("success-popup").classList.add("hidden");
+}
+
+function redirectToIndex() {
+    window.location.href = "index.html"; // chuyển hướng về index.html
+}
+
+document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Ngăn form gửi đi
+
+    showPopup();        // Hiện popup
+    this.reset();       // Reset form
+});
+</script>
 
     <script>
         // Timer countdown
@@ -1878,9 +2024,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }, {
         threshold: 0.1
     });
-
-
-
 });
 
 </script>
